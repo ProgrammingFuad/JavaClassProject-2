@@ -12,7 +12,11 @@ public class Candidate
      private int fundPref = -1; // 0: Social, 1: RotoCall, 2:PACs
      private double moneyMod = 1.0;
      private double debateMod = 1.0;
-          
+      
+     
+     /**
+      * Returns information about Candidate 
+      */
      public String toString()
      {
           String adType = "";
@@ -54,6 +58,12 @@ public class Candidate
           return "Candidate " + getName() + ":\n\tSlogan: " + getSlogan() + "\n\tParty: " + getParty() + "\n\tCurrent funds: " + getMoney() + "\n\tPreferred Ad Type: " + adType + "\n\tPreferred Fund Type: " + fundType + "\n\tCurrent Money Modifier: " + getMoneyMod() + "\n\tCurrent Debate Modifier: " + getDebateMod() + "\n";
      }
      
+     /**
+      * 
+      * @param inName Candidates name from input file
+      * @param inSlogan Candidates slogan from input file
+      * @param inParty Candidates party from input file 
+      */
      public Candidate(String inName, String inSlogan, String inParty)
      {
           setName(inName);
@@ -64,26 +74,41 @@ public class Candidate
           setFundPref(rand.nextInt(3));
      }
      
+     /**
+      * @param inName Candidates name being set 
+      */
      public void setName(String inName)
      {
           name = inName;
      }
      
+     /**
+      * returns Candidates Name
+      */
      public String getName()
      {
           return name;
      }
      
+     /**
+      * @param inSlogan Candidates slogan is set from input file. 
+      */
      public void setSlogan(String inSlogan)
      {
           slogan = inSlogan;
      }
      
+     /**
+      * returns Slogan
+      */
      public String getSlogan()
      {
           return slogan;
      }
-     
+     /**
+      * 
+      * @param inParty is Candidattes party from input file
+      */
      public void setParty(String inParty)
      {
           party = inParty;
@@ -94,11 +119,16 @@ public class Candidate
           return party;
      }
      
+     /**
+      * 
+      * @return Candidates random amount of money set in Constructor
+      */
      public int getMoney()
      {
           return money;
      }
      
+   
      public static long getAllMoney()
      {
           return allMoney;
@@ -110,20 +140,31 @@ public class Candidate
           allMoney +=newMoney;
      }
      
+     /**
+      * Will return True if Advertisement passed in and Candidates preference are aligned,
+      * else will return false
+      */
      public boolean endorse(Advertisement newAd)
      {
           return (getAdPref() == 0 && newAd instanceof IssueBasedAdvertisement) || (getAdPref() == 1 && newAd instanceof AttackAdvertisement) || (getAdPref() == 2 && newAd instanceof TownHallAdvertisement);
      }
-     
+    
+     /**
+      * Needed to compare Candidate names
+      */
      public boolean equals(Candidate otherCand)
      {
           return getName().equals(otherCand.getName());
      }
      
+     /**
+      * Will compare two candidates based off money
+      */
      public int compareTo(Candidate otherCand)
      {
           return getMoney() - otherCand.getMoney();
      }
+     
      
      public int getAdPref()
      {
