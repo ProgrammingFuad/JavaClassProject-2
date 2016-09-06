@@ -2,7 +2,7 @@
 CSCI161 Second Java Project Completed
 
 
-This was my Second project of the Spring 2016 Semester and I learned alot of new programming concepts. In this Project I utilized Inheritance, Exception handling, method overloading and overriding along with re-learning a valuable skill: Good Variable names and great documentation. Below are the list of requirements the program must adhere by in order to get a perfect score on the project. 
+This was my Second project of the Spring 2016 Semester and I learned alot of new programming concepts. In this Project I utilized Inheritance, Exception handling, method overloading and overriding along with re-learning a valuable skill: Good Variable names and great documentation. Below are the list of requirements the program must adhere too in order to get a perfect score on the project. 
 
   I have provided a sample txt file if you wish to download the program, all that needs changing is the scanner directory in the Driver file for the program to work. 
 
